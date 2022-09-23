@@ -1,7 +1,7 @@
 
 /* css selector for all elements */
 body {
-  background-image: url(../assets/grass.jpg);
+  background-image: url(assets/grass.jpg);
   background-size: contain;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -18,7 +18,7 @@ body {
 #btn1 {
   background-color: Transparent;
   border: none;
-  background-image: url(../assets/hand2.png);
+  background-image: url(assets/hand2.png);
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
@@ -33,7 +33,7 @@ body {
 #btn2 {
   background-color: Transparent;
   border: none;
-  background-image: url(../assets/hand1.png);
+  background-image: url(assets/hand1.png);
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
