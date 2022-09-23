@@ -1,0 +1,40 @@
+.button-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#btn1 {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 25%;
+  padding-bottom: 25%;
+}
+
+#btn2 {
+  margin-bottom: 0px;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 25%;
+  padding-bottom: 25%;
+}
+
+#ropeKnot{
+    width: 80px;
+    height:80px;
+    position:relative;
+    top: 120px;
+    z-index: 2;
+    bottom: initial;
+}
+ 
+#rope{
+  width: 200px;
+  height:250px;
+  position:relative;
+  bottom: 50px;
+  right:2px;
+}
