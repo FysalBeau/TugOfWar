@@ -1,3 +1,13 @@
+
+/* css selector for all elements */
+body {
+  background-image: url(/assets/grass.jpg);
+  background-size: contain;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+
 .button-div {
   display: flex;
   flex-direction: column;
@@ -6,7 +16,13 @@
 }
 
 #btn1 {
-  margin-bottom: 30px;
+  background-color: Transparent;
+  border: none;
+  background-image: url(/assets/hand2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
   margin-top: 20px;
   padding-left: 20%;
   padding-right: 20%;
@@ -15,7 +31,13 @@
 }
 
 #btn2 {
-  margin-bottom: 0px;
+  background-color: Transparent;
+  border: none;
+  background-image: url(/assets/hand1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 20%;
@@ -26,22 +48,21 @@
     width: 80px;
     height:80px;
     position:relative;
-    top: 120px;
+    top: 110px;
     z-index: 2;
     bottom: initial;
 }
  
 #rope{
-  width: 200px;
-  height:250px;
+  width: 20px;
+  height:200px;
   position:relative;
-  bottom: 50px;
-  right:2px;
+  bottom: 30px;
 }
 .dot{
   background-color: red;
-  width:2rem;
-  height:2rem;
+  width:5rem;
+  height:5rem;
   border-radius: 50%;
   position:absolute;
   transform: translate(-50%, -50%);

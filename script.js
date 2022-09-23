@@ -15,7 +15,11 @@ btn1.addEventListener("touchstart" , e => {
   // console.log(str)
   var topSubstring = str.substring(1, str.length-3)
   // console.log(topSubstring)
-  ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
+  if ((parseInt(topSubstring) - 10) < 0) {
+    alert("player 1 wins!")
+  }else{
+    ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
+  }
   console.log(ropeKnot.style.top)
 
 })
@@ -34,7 +38,11 @@ btn2.addEventListener("touchstart" , e => {
   // console.log(str)
   var topSubstring = str.substring(1, str.length-3)
   // console.log(topSubstring)
-  ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
+  if ((parseInt(topSubstring) + 10) > 210) {
+    alert("player 2 wins!")
+  }else{
+    ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
+  }
   console.log(ropeKnot.style.top)
 })
 
