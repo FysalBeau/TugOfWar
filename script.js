@@ -1,3 +1,28 @@
+// Full-Screen Mode Toggle Code (Start)
+
+function getFullscreenElement() {
+  return document.fullscreenElement
+    || document.webkitFullscreenElement
+    || document.mozFullscreenElement
+    || document.msFullscreenElement
+}
+
+function toggleFullscreen() {
+  if (getFullscreenElement()) {
+    document.exitFullscreen();
+  } else {
+    document.documentElement.requestFullscreen().catch((e) => {
+      console.log(e);
+    });
+  }
+}
+
+document.addEventListener("click", () => {
+  toggleFullscreen();
+});
+
+// Full-Screen Mode Toggle Code (End)
+
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
 const ropeKnot = document.getElementById("ropeKnot")
