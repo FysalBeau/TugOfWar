@@ -1,5 +1,4 @@
 // Full-Screen Mode Toggle Code (Start)
-
 function getFullscreenElement() {
   return document.fullscreenElement
     || document.webkitFullscreenElement
@@ -20,8 +19,9 @@ function toggleFullscreen() {
 document.addEventListener("click", () => {
   toggleFullscreen();
 });
-
 // Full-Screen Mode Toggle Code (End)
+
+
 
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
@@ -40,11 +40,7 @@ btn1.addEventListener("touchstart" , e => {
   // console.log(str)
   var topSubstring = str.substring(1, str.length-3)
   // console.log(topSubstring)
-  if ((parseInt(topSubstring) - 10) < 0) {
-    alert("player 1 wins!")
-  }else{
-    ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
-  }
+  ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
   console.log(ropeKnot.style.top)
 
 })
@@ -63,11 +59,7 @@ btn2.addEventListener("touchstart" , e => {
   // console.log(str)
   var topSubstring = str.substring(1, str.length-3)
   // console.log(topSubstring)
-  if ((parseInt(topSubstring) + 10) > 210) {
-    alert("player 2 wins!")
-  }else{
-    ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
-  }
+  ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
   console.log(ropeKnot.style.top)
 })
 
@@ -96,5 +88,17 @@ document.addEventListener("touchend", e => {
   [...e.changedTouches].forEach(touch => {
     const dot = document.getElementById(touch.identifier)
     dot.remove()
+    const ropeKnotStyle = window.getComputedStyle(ropeKnot);
+    const ropeKnotTopVal = ropeKnotStyle.getPropertyValue("top")
+    var str = JSON.stringify(ropeKnotTopVal)
+    var topSubstring = str.substring(1, str.length-3)
+
+    if ((parseInt(topSubstring) - 10) < 0) {
+      alert("player 1 wins!")
+      ropeKnot.style.top = "110px";
+    }else if ((parseInt(topSubstring) + 10) > 210) {
+      alert("player 2 wins!")
+      ropeKnot.style.top ="110px";
+    }
   })
 })
