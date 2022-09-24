@@ -1,18 +1,29 @@
 
 /* css selector for all elements */
 body {
-  background-image: url(assets/grass.jpg);
-  background-size: contain;
+  background-color: green;
   overflow-y: hidden;
   overflow-x: hidden;
 }
 
+.app-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
 
 .button-div {
+  background-image: url(assets/grass.jpg);
+  background-size:400px 800px ;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  resize:none;
+  width:400px;
+  height:800px;
+
 }
 
 #fullscreenbtn{

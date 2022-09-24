@@ -23,7 +23,6 @@ fullscreenbtn.addEventListener("click", () => {
 // Full-Screen Mode Toggle Code (End)
 
 
-
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
 const ropeKnot = document.getElementById("ropeKnot")
