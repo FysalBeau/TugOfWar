@@ -16,7 +16,8 @@ function toggleFullscreen() {
   }
 }
 
-document.addEventListener("click", () => {
+const fullscreenbtn = document.getElementById("fullscreenbtn");
+fullscreenbtn.addEventListener("click", () => {
   toggleFullscreen();
 });
 // Full-Screen Mode Toggle Code (End)

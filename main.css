@@ -15,6 +15,17 @@ body {
   align-items: center;
 }
 
+#fullscreenbtn{
+  background-color: Transparent;
+  border: none;
+  background-image: url(assets/fullscreenbtn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+}
+
 #btn1 {
   background-color: Transparent;
   border: none;
