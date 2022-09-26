@@ -40,7 +40,7 @@ body {
 #btn1 {
   background-color: Transparent;
   border: none;
-  background-image: url(assets/hand2.png);
+  background-image: url(assets/redHands.png);
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
@@ -55,7 +55,7 @@ body {
 #btn2 {
   background-color: Transparent;
   border: none;
-  background-image: url(assets/hand1.png);
+  background-image: url(assets/blueHands.png);
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
