@@ -94,15 +94,15 @@ btn1.addEventListener("touchstart" , e => {
 
   //Check if touching the zone
   if(touching(slider2, zone2)) {
-    ropeKnot.style.top  = (parseInt(topSubstring) - 50) +"px"
-    console.log(ropeKnot.style.top)
-  }
-  else if(touching(slider2, deduct)) {
     ropeKnot.style.top  = (parseInt(topSubstring) + 50) +"px"
     console.log(ropeKnot.style.top)
   }
+  else if(touching(slider2, deduct)) {
+    ropeKnot.style.top  = (parseInt(topSubstring) - 50) +"px"
+    console.log(ropeKnot.style.top)
+  }
   else {
-    ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
+    ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
     console.log(ropeKnot.style.top)
   }
 
@@ -138,15 +138,15 @@ btn2.addEventListener("touchstart" , e => {
   
   //Check if touching the zone
   if(touching(slider2, zone2)) {
-    ropeKnot.style.top  = (parseInt(topSubstring) + 50) +"px"
-    console.log(ropeKnot.style.top)
-  }
-  else if(touching(slider2, deduct)) {
     ropeKnot.style.top  = (parseInt(topSubstring) - 50) +"px"
     console.log(ropeKnot.style.top)
   }
+  else if(touching(slider2, deduct)) {
+    ropeKnot.style.top  = (parseInt(topSubstring) + 50) +"px"
+    console.log(ropeKnot.style.top)
+  }
   else {
-    ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
+    ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
     console.log(ropeKnot.style.top)
   }
 
