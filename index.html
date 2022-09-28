@@ -11,12 +11,28 @@
 </head>
 <body>
     <div class = "app-wrapper">
-        <div  class ='button-div2' id="div-rgb">
+        <div id="div-gameover">
+            <h1 id="h1-pwin">Player X Wins!</h1>
+            <div style="display:flex;flex-direction:row;">
+                <h3 id="h3-p1">Player 1: 10</h3>
+                <h3 id="h3-p2">Player 2: 12</h3>
+            </div>
+            <button class="btn-gameover" id="btn-rematch">REMATCH</button>
+            <button class="btn-gameover" id="btn-reset">RESET GAME</button>
+        </div>
+
+        <div id="div-rgb">
             <!-- <button id="fullscreenbtn">TEMPORARY</button> -->
             <button id="btn1"></button>
-            <img id='ropeKnot' src="assets/ropeKnot.png" />
+            <img id='ropeKnot' src="assets/goldFlag.png" />
             <img id='rope' src="assets/rope.png" />
             <button id="btn2"></button>
+
+            <div id = border>
+                <div id = deduct />
+                <div id = zone />
+                <div id = slider />
+            </div>
         </div>
     </div>
     

@@ -1,7 +1,6 @@
-
 /* css selector for all elements */
 body {
-  background-color: green;
+  background-color: white;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -12,7 +11,7 @@ body {
 }
 
 
-.button-div {
+/* .button-div {
   background-image: url(assets/grass.jpg);
   background-size:400px 800px ;
   background-repeat: no-repeat;
@@ -23,9 +22,7 @@ body {
   resize:none;
   width:400px;
   height:800px;
-
 }
-
 .button-div2 {
   background: linear-gradient(0deg, rgba(0,82,255,1) 40%, rgba(255,0,0,1) 60%);
   display: flex;
@@ -35,11 +32,23 @@ body {
   resize:none;
   width:400px;
   height:800px;
-}
+} */
 
 #div-rgb {
-  background: linear-gradient(0deg, rgba(0,82,255,1) 40%, rgba(255,0,0,1) 60%);
+  background: linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  resize:none;
+  width:400px;
+  height:800px;
+}
+
+
+#div-gameover {
+  background: #444444;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,48 +71,66 @@ body {
 #btn1 {
   background-color: Transparent;
   border: none;
-  background-image: url(assets/hand2.png);
+  background-image: url(assets/redhands.png);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   margin-top: 20px;
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 20%;
   padding-bottom: 20%;
+  background-position: center;
+  border-radius: 100%;
+  position: relative;
+  z-index: 3;
+  left: 20px;
 }
 
 #btn2 {
   background-color: Transparent;
   border: none;
-  background-image: url(assets/hand1.png);
+  background-image: url(assets/bluehands.png);
   background-size: contain;
   background-repeat: no-repeat;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 20%;
   padding-bottom: 20%;
   margin-top: 20px;
+  position: relative;
+  z-index: 3;
+  left: 6px;
 }
 
 #ropeKnot{
-    width: 80px;
-    height:80px;
-    position:relative;
-    top: 110px;
-    z-index: 2;
-    bottom: initial;
+  width: 80px;
+  height:80px;
+  position:relative;
+  top: 110px;
+  left: 35px;
+  z-index: 2;
+  bottom: initial;
+  transform: rotate(40deg);
+  transform: rotateZ(2deg);
 }
  
 #rope{
-  width: 20px;
-  height:200px;
+  width: 25px;
+  height: 200px;
   position:relative;
-  bottom: 30px;
+  /* bottom: 30px; */
+  z-index: -1;
+  /* padding: 0; */
+  bottom: 35px;
+  transform: scale(1, 4.3);
+  /* overflow: hidden; */
+  z-index: 1;
 }
+
 .dot{
   background-color: red;
   width:5rem;
@@ -111,4 +138,94 @@ body {
   border-radius: 50%;
   position:absolute;
   transform: translate(-50%, -50%);
+}
+
+h3 {
+  margin: 20px;
+}
+
+#h3-p1 {
+  color: crimson;
+}
+
+#h3-p2 {
+  color: royalblue;
+}
+
+#h1-pwin {
+  color: whitesmoke;
+}
+
+.btn-gameover {
+  margin-top: 20px;
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #23c483;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+#btn-reset {
+  background-color: #c0352b;
+}
+
+#border {
+  width: 20px;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 330px;
+  top: 150px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 25px;
+}
+
+#deduct {
+  background-color: black;
+  width: 20px;
+  height: 180px;
+  z-index: 2;
+  position: relative;
+}
+
+#zone {
+  width: 20px;
+  height: 60px;
+  background-color: lightgray;
+  z-index: 3;
+  position: relative;
+  top: 60px;
+}
+
+#slider {
+  width: 20px;
+  height: 50px;
+  background: rgb(46, 182, 216);
+  position: relative;
+  animation: myfirst 5s infinite;
+  border-radius: 25px;
+}
+
+@keyframes myfirst {
+  0%   {background: rgb(46, 182, 216); left: 0px; top: 0px;}
+  25%  {background: yellow; left: 0px; top: 200px;}
+  50%  {background: purple; left: 0px; top: 0px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: rgb(46, 182, 216); left: 0px; top: 0px;}
+
+  0%   {top: -250px;}
+  25%  {top: 250px;}
+  50%  {top: -250px;}
+  75%  {top: 250px;}
+  100%  {top: -250px;}
 }
