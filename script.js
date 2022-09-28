@@ -149,7 +149,12 @@ btn2.addEventListener("touchstart" , e => {
   // console.log(str)
   let topSubstring = str.substring(1, str.length-3)
   // console.log(topSubstring)
-  
+  const buttonDivStyle = window.getComputedStyle(buttonDiv);
+  const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
+  let str2 = JSON.stringify(buttonDivGradVal)
+  console.log(str2)
+  let blue_substring = parseInt(str2.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
+  let red_substring = parseInt(str2.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
   //Check if touching the zone
   if(touching(slider2, zone2)) {
     ropeKnot.style.top  = (parseInt(topSubstring) + 50) +"px"
@@ -168,17 +173,17 @@ btn2.addEventListener("touchstart" , e => {
   }
 
   // Gradient background change
-  const buttonDivStyle = window.getComputedStyle(buttonDiv);
-  const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
-  str = JSON.stringify(buttonDivGradVal)
-  console.log(str)
-  let blue_substring = parseInt(str.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
-  let red_substring = parseInt(str.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
-  console.log(blue_substring);
-  console.log(red_substring);
+  // const buttonDivStyle = window.getComputedStyle(buttonDiv);
+  // const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
+  // str = JSON.stringify(buttonDivGradVal)
+  // console.log(str)
+  // let blue_substring = parseInt(str.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
+  // let red_substring = parseInt(str.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
+  // console.log(blue_substring);
+  // console.log(red_substring);
 
 
-  buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 4) + "%, rgba(255,0,0,0.75) " + (red_substring + 4) + "%)";
+  // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 4) + "%, rgba(255,0,0,0.75) " + (red_substring + 4) + "%)";
 })
 
 btnRematch.addEventListener("touchend", e => {
