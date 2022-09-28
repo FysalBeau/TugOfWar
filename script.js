@@ -84,8 +84,8 @@ btn1.addEventListener("touchstart" , e => {
   // console.log("Btn1-Targets" , e.targetTouches.length)
   // console.log("Btn1-Changed" , e.changedTouches.length)
 
-  const ropeKnotStyle = window.getComputedStyle(ropeKnot);
-  const ropeKnotTopVal = ropeKnotStyle.getPropertyValue("top")
+  let ropeKnotStyle = window.getComputedStyle(ropeKnot);
+  let ropeKnotTopVal = ropeKnotStyle.getPropertyValue("top")
   // console.log(ropeKnotTopVal)
   let str = JSON.stringify(ropeKnotTopVal)
   // console.log(str)
@@ -96,42 +96,49 @@ btn1.addEventListener("touchstart" , e => {
   const buttonDivStyle = window.getComputedStyle(buttonDiv);
   const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
   let str2 = JSON.stringify(buttonDivGradVal)
-  console.log(str2)
+  // console.log(str2)
   let blue_substring = parseInt(str2.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
   let red_substring = parseInt(str2.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
 
-  console.log(blue_substring);
-  console.log(red_substring);
+  // console.log(blue_substring);
+  // console.log(red_substring);
 
   //Check if touching the zone
   if(touching(slider2, zone2)) {
     ropeKnot.style.top  = (parseInt(topSubstring) - 50) +"px"
     console.log(ropeKnot.style.top)
-    buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 20) + "%, rgba(255,0,0,0.75) " + (red_substring - 20) + "%)";
+    // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 20) + "%, rgba(255,0,0,0.75) " + (red_substring - 20) + "%)";
+    console.log("Sweet Spot!")
   }
   else if(touching(slider2, deduct)) {
     ropeKnot.style.top  = (parseInt(topSubstring) + 50) +"px"
     console.log(ropeKnot.style.top)
-    buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 20) + "%, rgba(255,0,0,0.75) " + (red_substring + 20) + "%)";
+    // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 20) + "%, rgba(255,0,0,0.75) " + (red_substring + 20) + "%)";
+    console.log("Bad Spot!")
   }
   else {
     ropeKnot.style.top  = (parseInt(topSubstring) - 10) +"px"
     console.log(ropeKnot.style.top)
-    buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 4) + "%, rgba(255,0,0,0.75) " + (red_substring - 4) + "%)";
+    // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 4) + "%, rgba(255,0,0,0.75) " + (red_substring - 4) + "%)";
   }
 
-  // Gradient background change
-  // const buttonDivStyle = window.getComputedStyle(buttonDiv);
-  // const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
-  // let str2 = JSON.stringify(buttonDivGradVal)
-  // console.log(str2)
-  // let blue_substring = parseInt(str.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
-  // let red_substring = parseInt(str.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
-  // console.log(blue_substring);
-  // console.log(red_substring);
+  ropeKnotStyle = window.getComputedStyle(ropeKnot);
+  ropeKnotTopVal = ropeKnotStyle.getPropertyValue("top")
+  console.log(ropeKnotTopVal)
+  str = JSON.stringify(ropeKnotTopVal)
+  topSubstring = parseInt(str.substring(1, str.length-3))
+  console.log(topSubstring)
 
-
-  // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 4) + "%, rgba(255,0,0,0.75) " + (red_substring - 4) + "%)";
+  if (topSubstring > 110) {
+    console.log("new: " + "rgba(0,82,255," + ((topSubstring - 100)/100) + ")")
+    buttonDiv.style.background = "rgba(0, 82, 255, " + ((topSubstring - 100)/100) + ")"
+  } else if (topSubstring > 100 && topSubstring < 110) {
+    buttonDiv.style.background = "rgba(0, 82, 255, " + ((topSubstring - 100)/100) + ")"
+  } else if (topSubstring <= 100) {
+    buttonDiv.style.background = "rgba(255, 100, 100, " + Math.abs(((topSubstring - 100)/100)) + ")"
+  } else if (topSubstring == 110) {
+    buttonDiv.style.background = "rgba(255,100,100,0)"
+  }
 
 })
 
@@ -148,37 +155,43 @@ btn2.addEventListener("touchstart" , e => {
   let str = JSON.stringify(ropeKnotTopVal)
   // console.log(str)
   let topSubstring = str.substring(1, str.length-3)
-  // console.log(topSubstring)
+  console.log(topSubstring)
+
+  const buttonDivStyle = window.getComputedStyle(buttonDiv);
+  const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
+  let str2 = JSON.stringify(buttonDivGradVal)
+  console.log(str2)
+  // let blue_substring = parseInt(str2.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
+  // let red_substring = parseInt(str2.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
+
+  // console.log(blue_substring);
+  // console.log(red_substring);
   
   //Check if touching the zone
   if(touching(slider2, zone2)) {
     ropeKnot.style.top  = (parseInt(topSubstring) + 50) +"px"
     console.log(ropeKnot.style.top)
-    buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 20) + "%, rgba(255,0,0,0.75) " + (red_substring + 20) + "%)";
+    // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 20) + "%, rgba(255,0,0,0.75) " + (red_substring + 20) + "%)";
   }
   else if(touching(slider2, deduct)) {
     ropeKnot.style.top  = (parseInt(topSubstring) - 50) +"px"
     console.log(ropeKnot.style.top)
-    buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 20) + "%, rgba(255,0,0,0.75) " + (red_substring - 20) + "%)";
+    // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring - 20) + "%, rgba(255,0,0,0.75) " + (red_substring - 20) + "%)";
   }
   else {
     ropeKnot.style.top  = (parseInt(topSubstring) + 10) +"px"
     console.log(ropeKnot.style.top)
-    buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 4) + "%, rgba(255,0,0,0.75) " + (red_substring + 4) + "%)";
+    // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 4) + "%, rgba(255,0,0,0.75) " + (red_substring + 4) + "%)";
   }
 
-  // Gradient background change
-  const buttonDivStyle = window.getComputedStyle(buttonDiv);
-  const buttonDivGradVal = buttonDivStyle.getPropertyValue("background")
-  str = JSON.stringify(buttonDivGradVal)
-  console.log(str)
-  let blue_substring = parseInt(str.substring(62, 65).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
-  let red_substring = parseInt(str.substring(89, 93).replace('%', '').replace(',', '').replace(" ", '').replace(")", ''));
-  console.log(blue_substring);
-  console.log(red_substring);
-
-
-  buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) " + (blue_substring + 4) + "%, rgba(255,0,0,0.75) " + (red_substring + 4) + "%)";
+  if (topSubstring > 110) {
+    console.log("new: " + "rgba(0,82,255," + ((topSubstring - 100)/100) + ")")
+    buttonDiv.style.background = "rgba(0, 82, 255, " + ((topSubstring - 100)/100) + ")"
+  } else if (topSubstring > 100 && topSubstring < 110) {
+    buttonDiv.style.background = "rgba(0, 82, 255, " + ((topSubstring - 100)/100) + ")"
+  } else if (topSubstring <= 100) {
+    buttonDiv.style.background = "rgba(255, 100, 100, " + Math.abs(((topSubstring - 100)/100)) + ")"
+  }
 })
 
 btnRematch.addEventListener("touchend", e => {
@@ -190,7 +203,8 @@ btnRematch.addEventListener("touchend", e => {
 
   ropeKnot.style.top = "110px";
   gameoverDiv.style.display = "none";
-  buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%)"
+  // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%)"
+  buttonDiv.style.background = "rgba(255,100,100,0)"
   buttonDiv.style.display = "flex";
 })
 
@@ -201,7 +215,8 @@ btnReset.addEventListener("touchend", e => {
 
   ropeKnot.style.top = "110px";
   gameoverDiv.style.display = "none";
-  buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%)"
+  // buttonDiv.style.background = "linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%)"
+  buttonDiv.style.background = "rgba(255,100,100,0)"
   buttonDiv.style.display = "flex";
 })
 
@@ -232,8 +247,8 @@ buttonDiv.addEventListener("touchend", e => {
     dot.remove()
     const ropeKnotStyle = window.getComputedStyle(ropeKnot);
     const ropeKnotTopVal = ropeKnotStyle.getPropertyValue("top")
-    var str = JSON.stringify(ropeKnotTopVal)
-    var topSubstring = str.substring(1, str.length-3)
+    let str = JSON.stringify(ropeKnotTopVal)
+    let topSubstring = str.substring(1, str.length-3)
 
     if ((parseInt(topSubstring) - 10) < 0) {
       // alert("player 1 wins!")

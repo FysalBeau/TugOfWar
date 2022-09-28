@@ -35,7 +35,8 @@ body {
 } */
 
 #div-rgb {
-  background: linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%);
+  /* background: linear-gradient(0deg, rgba(0,82,255,0.75) 40%, rgba(255,0,0,0.75) 60%); */
+  background: rgba(255,100,100,0);
   display: flex;
   flex-direction: column;
   justify-content: center;
